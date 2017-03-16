@@ -1,0 +1,84 @@
+﻿@model BlogMundoDesignMVC.Models.Postagem
+
+@{
+    Layout = null;
+}
+
+<header class="hero-image" role="banner" style="background-image: url(/Content/img/default-single-hero-with-sidebar.jpg);">
+    <span class="menu-trigger animated fadeInDown">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </span>
+    <div id="menu-target">
+        <ul>
+            <li><i class="fa fa-home"></i>@Html.ActionLink("Home", "Index")</li>
+            <li><i class="fa fa-anchor"></i><a href="page.html">About</a></li>
+            <li><i class="fa fa-paper-plane"></i><a href="contact.html">Contact</a></li>
+        </ul>
+        <hr>
+@*
+    <ul>
+        <li><i class="fa fa-file"></i><a href="post.html">Post Page</a></li>
+        <li><i class="fa fa-file"></i><a href="post-sidebar.html">Post with Sidebar</a></li>
+        <li><i class="fa fa-home"></i><a href="alt-home.html">Alternate Home</a></li>
+        <li><i class="fa fa-image"></i><a href="category.html">Category Page</a></li>
+    </ul>*@
+    </div>
+</header>
+
+
+<main class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-8 single-content-sidebar">
+
+            <h1>@Model.TituloPostagem</h1>
+            <p class="subtitle">@Model.SubtituloPostagem</p>
+            <p>@Model.ConteudoPrimeiroNivelPostagem</p>
+            <p class="pullquote">@Model.TituloMeioPostagem</p>
+
+            <p>@Model.ConteudoSegundoNivelPostagem</p>
+
+        </div><!-- main-content/col -->
+        @* Conteúdo lateral direito da postagem *@
+        <div class="col-xs-12 col-md-3 col-md-offset-1 single-content-sidebar-area">
+            <img src="~/Content/img/profile-1.jpg" class="user-icon " alt="user-image">
+            <div class="meta">
+                <div class="sidebar-info">
+                    <a href="#">@Model.NomeAutor</a>
+                </div>
+                <div class="sidebar-readtime">
+                    <i class="fa fa-bookmark"></i> @Model.DataPostagem
+                </div>
+            </div>
+            
+            <h2 class="favorites">Similar Categories</h2>
+            <a href="category.html">
+                <div class="similar-cat">
+                    <img src="~/Content/img/similar-cat-1.jpg">
+                    <h3>Storytime</h3>
+                </div>
+            </a>
+
+        </div>
+        @* Fim do conteúdo latera da postagem *@
+        
+        
+
+    </div>
+</main>
+
+
+
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+
+@Scripts.Render("~/bundles/jquery")
+@*@Scripts.Render("~/bundles/bootstrap")*@
+
+@*<script src="../../../../../ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>*@
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+<script src="~/Content/js/vendor/jquery.jpanelmenu.min.js"></script>
+<script src="~/Content/js/vendor/bootstrap.min.js"></script>
+<script src="~/Content/js/vendor/fastclick.min.js"></script>
+<script src="~/Content/js/main.js"></script>

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mundo Design</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <main class="container left-container">
+        <div class="row">
+            <div id="menu-target">
+                <ul>
+                    <li><i class="fa fa-home"></i><a href="#">Home</a></li>
+                    <li><i class="fa fa-anchor"></i><a href="#">About</a></li>
+                    <li><i class="fa fa-paper-plane"></i><a href="#">Contact</a></li>
+                </ul>
+                <hr>
+
+            </div>
+            <section class="sidebar col-md-4 col-sm-12" style="background-image:url(/Content/img/default-sidebar.jpg">
+                <span class="menu-trigger animated fadeInDown">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </span>
+
+                <div class="site-info">
+                    <div class="primary-info">
+                        <h1>Writer</h1>
+                        <p>A minimal blogging theme to put your content on show. <a href="post.html">Look at the features.</a> </p>
+                        <p>Content is king</p>
+                    </div>
+                    <div class="secondary-info">
+                        <p>
+                            <a class="btn btn-primary" href="#"><i class="fa fa-user-plus"></i>Join Our Newsletter</a>
+                        </p>
+                    </div>
+                </div>
+            </section><!-- end sidebar -->
+
+            @RenderBody()
+        </div>
+
+    </main>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    
+    @*<script src="../../../../../ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>*@
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="~/Content/js/vendor/jquery.jpanelmenu.min.js"></script>
+    <script src="~/Content/js/vendor/bootstrap.min.js"></script>
+    <script src="~/Content/js/vendor/fastclick.min.js"></script>
+    <script src="~/Content/js/main.js"></script>
+    
+
+@RenderSection("scripts", required: false)
+</body>
+</html>

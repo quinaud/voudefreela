@@ -1,0 +1,37 @@
+﻿@using BlogMundoDesignMVC.Models
+@model IEnumerable<BlogMundoDesignMVC.Models.Postagem>
+
+@{
+    var listaPostagens = (IDictionary<string, Postagem>) ViewBag.ListaPostagem;
+}
+
+<section class="col-md-8 col-sm-6 col-md-offset-6 main-content">
+    <div class="sub-nav">
+        <a href="#" class="select-posts active">Posts</a>
+    </div>
+    @{
+
+        foreach (var item in listaPostagens)
+        {
+
+
+            <div class="home-page-posts animated fadeIn ">
+                <article class="post">
+                    <div class="post-preview col-xs-10  no-gutter">
+                        @*<h2><a href="post-sidebar.html">@item.Value.TituloPostagem</a></h2>*@
+                        <h2>@Html.ActionLink(item.Value.TituloPostagem, "Details", new {idPostagem = item.Key})</h2>
+                        <p>@item.Value.SubtituloPostagem</p>
+                        <p class="meta">
+                            <a href="#">@item.Value.NomeAutor</a><a href="#"></a> <i class="link-spacer"></i> <i class="fa fa-bookmark"></i> @item.Value.DataPostagem
+                        </p>
+                    </div>
+                    <div class="col-xs-2 no-gutter">
+                        <img src="~/Content/img/profile-1.jpg" class="user-icon" alt="user-image">
+                    </div>
+                </article>
+
+            </div><!-- Home page posts -->
+        }
+
+    }
+</section><!-- main content -->
