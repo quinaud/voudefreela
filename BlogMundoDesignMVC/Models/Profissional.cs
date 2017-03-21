@@ -19,6 +19,8 @@
 
         public string LocalExperiencia { get; set; }
 
+        public bool EfetuouPagamento { get; set; }
+
 
     }
 }

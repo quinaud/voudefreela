@@ -59,6 +59,8 @@ namespace BlogMundoDesignMVC.EntityConfig
                 .HasMaxLength(400)
                 .HasColumnType("varchar");
 
+            Property(c => c.EfetuouPagamento)
+                .IsOptional();
 
             ToTable("Profissionais");
         }

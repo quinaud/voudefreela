@@ -133,6 +133,7 @@
     <Compile Include="Contexto\Contexto.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PostagemController.cs" />
+    <Compile Include="Controllers\ProfissionalsController.cs" />
     <Compile Include="EntityConfig\ProfissionalConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -244,6 +245,11 @@
     <Content Include="Views\Postagem\Details.cshtml" />
     <Content Include="Views\Postagem\NovaPostagem.cshtml" />
     <Content Include="Views\Postagem\About.cshtml" />
+    <Content Include="Views\Profissionals\Create.cshtml" />
+    <Content Include="Views\Profissionals\Delete.cshtml" />
+    <Content Include="Views\Profissionals\Details.cshtml" />
+    <Content Include="Views\Profissionals\Edit.cshtml" />
+    <Content Include="Views\Profissionals\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

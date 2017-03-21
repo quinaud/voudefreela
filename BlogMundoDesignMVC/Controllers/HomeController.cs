@@ -6,7 +6,7 @@ namespace BlogMundoDesignMVC.Controllers
     {
         public ActionResult Index()
         {
-            return RedirectToAction("Index", "Postagem");
+            return RedirectToAction("Create", "Profissionals");
         }
 
         public ActionResult About()
