@@ -47,6 +47,14 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -122,12 +130,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contexto\Contexto.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PostagemController.cs" />
+    <Compile Include="EntityConfig\ProfissionalConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Postagem.cs" />
+    <Compile Include="Models\Profissional.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +173,7 @@
     <Content Include="Content\img\default-sidebar.jpg" />
     <Content Include="Content\img\default-single-hero-with-sidebar.jpg" />
     <Content Include="Content\img\default-single-hero.jpg" />
+    <Content Include="Content\img\OF8O1N0.jpg" />
     <Content Include="Content\img\profile-1.jpg" />
     <Content Include="Content\img\profile-2.jpg" />
     <Content Include="Content\img\profile-3.jpg" />
@@ -198,6 +211,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regulard41d.eot" />
     <None Include="Properties\PublishProfiles\BlogMundoDesign.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\FormularioPostagem\FormNovaPostagem.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -228,6 +242,8 @@
     <Content Include="Views\Postagem\Index.cshtml" />
     <Content Include="Views\Postagem\Create.cshtml" />
     <Content Include="Views\Postagem\Details.cshtml" />
+    <Content Include="Views\Postagem\NovaPostagem.cshtml" />
+    <Content Include="Views\Postagem\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

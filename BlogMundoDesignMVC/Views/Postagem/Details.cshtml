@@ -17,13 +17,6 @@
             <li><i class="fa fa-paper-plane"></i><a href="contact.html">Contact</a></li>
         </ul>
         <hr>
-@*
-    <ul>
-        <li><i class="fa fa-file"></i><a href="post.html">Post Page</a></li>
-        <li><i class="fa fa-file"></i><a href="post-sidebar.html">Post with Sidebar</a></li>
-        <li><i class="fa fa-home"></i><a href="alt-home.html">Alternate Home</a></li>
-        <li><i class="fa fa-image"></i><a href="category.html">Category Page</a></li>
-    </ul>*@
     </div>
 </header>
 
@@ -52,11 +45,11 @@
                 </div>
             </div>
             
-            <h2 class="favorites">Similar Categories</h2>
+            <h2 class="favorites">Fique por dentro</h2>
             <a href="category.html">
                 <div class="similar-cat">
                     <img src="~/Content/img/similar-cat-1.jpg">
-                    <h3>Storytime</h3>
+                    <h3>Titulo Chamativo</h3>
                 </div>
             </a>
 
@@ -67,7 +60,40 @@
 
     </div>
 </main>
-
+<footer class="single without-readmore">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-2">
+                <img src="~/Content/img/profile-1.jpg" class="user-icon " alt="user-image">
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="category-list">
+                    <p>Publicado em <span>@Model.DataPostagem</span></p>
+                    <p><a href="#">@Model.NomeAutor</a>
+                    <div class="other-catergories">
+                        @*<h3>Also found in</h3>
+                        <ul>
+                            <li><a href="#">Stories</a>,</li>
+                            <li><a href="#">Life</a>,</li>
+                            <li><a href="#">Adventures</a></li>
+                        </ul>*@
+                    </div>
+                </div>
+            </div><!-- end col -->
+            <div class="col-xs-12 col-sm-4">
+                <div class="social">
+                    <p>
+                        Compartilhe este Blog Post
+                        <div class="social-links">
+                            <a class="social-icon" href="#" data-platform="twitter" data-message="Message about this post" data-url="http://writertheme.com/post"><i class="fa fa-twitter"></i></a>
+                            <a class="social-icon" href="#" data-platform="facebook" data-message="Message about this post" data-url="http://writertheme.com/post"><i class="fa fa-facebook-official"></i></a>
+                            <a class="social-icon" data-platform="mail" href="mailto:support@writertheme.com"><i class="fa fa-envelope"></i></a>
+                        </div>
+                </div>
+            </div>
+        </div><!-- end row -->
+    </div>
+</footer>
 
 
 @Styles.Render("~/Content/css")

@@ -8,15 +8,7 @@ namespace BlogMundoDesignMVC.Controllers
 {
     public class PostagemController : Controller
     {
-        public PostagemController()
-        {
-
-
-
-
-
-
-        }
+       
 
         // GET: Postagem
         public ActionResult Index()
@@ -56,24 +48,16 @@ namespace BlogMundoDesignMVC.Controllers
                     postagem.ImagemPostBase64 = item.Value.ImagemPostBase64;
                     postagem.FotoAutor = item.Value.FotoAutor;
 
-
-                    //listaTeste.Add(new
-                    //{
-                    //    item.Value.ConteudoPrimeiroNivelPostagem,
-                    //    item.Value.ConteudoSegundoNivelPostagem,
-                    //    item.Value.DataPostagem,
-                    //    item.Value.NomeAutor,
-                    //    item.Value.SubtituloPostagem,
-                    //    item.Value.TituloMeioPostagem,
-                    //    item.Value.ImagemPostBase64,
-                    //    item.Value.FotoAutor
-
-                    //});
                 }
             }
 
 
             return View(postagem);
+        }
+
+        public ActionResult NovaPostagem()
+        {
+            return View();
         }
 
         // GET: Postagem/Create
@@ -140,6 +124,11 @@ namespace BlogMundoDesignMVC.Controllers
             {
                 return View();
             }
+        }
+
+        public ActionResult About()
+        {
+            return View();
         }
     }
 }
