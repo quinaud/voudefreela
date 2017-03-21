@@ -166,6 +166,8 @@ csx/
 ecf/
 rcf/
 
+voudefreela/BlogMundoDesignMVC/Web.config
+
 # Windows Store app package directory
 AppPackages/
 BundleArtifacts/
