@@ -6,13 +6,190 @@
 
 
 <section class="col-md-8 col-sm-6 col-md-offset-6 main-content">
-    <div class="sub-nav">
-        <a href="#" class="select-posts active">Faça parte</a>
+    <h3>Como funciona nossa plataforma.</h3>
+
+    <p>Para ganhar visibilidade junto aos nossos parceiros promotores de eventos primeiro você deve preencher o formulário de cadastro. Ele é simples e auto explicativo, mas se surgirem dúvidas você pode nos enviar um e-mail.</p>
+
+    <p>O próximo passo é pagar a taxa de cadastro. Os 100 primeiros cadastrados no Vou de Freelas vão ganhar uma força nossa e terão apenas que pagar <strong>uma taxa única de cadastro de 7,90</strong> que será válida por 6 meses. Após este período você poderá escolher renovar seu cadastro e aderir ou não à proposta de pagamento vigente; não há obrigatoriedade de permanência.</p>
+    <p>Após a confirmação de pagamento, seu cadastro já será enviado para nossos parceiros que terão total disponibilidade para fazer contato contigo.</p>
+    <p>Por fim, basta fechar o negócio, fazer um bom trabalho e aguardar novas propostas.</p>
+    <p>Simples não é!? A idéia é justamente essa, simplificar para que você faça dinheiro o mais rápido possível!</p>
+
+    <h3>Faça parte</h3>
+
+    <p>Aqui começa a parte prática rumo aos seus novos contatos profissionais. Siga os passos abaixo:</p>
+    <ol>
+        <li>Preencha o cadastro abaixo</li>
+        <li>Faça o pagamento da taxa de cadastro</li>
+        <li>Mantenha-se disponível para receber os contatos de nossos parceiros.</li>
+    </ol>
+
+    <div class="home-page-posts animated fadeIn">
+
+        <h4>Ficha de cadastro</h4>
+
+        @using (Html.BeginForm())
+            {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+            <div class="form-group col-sm-6 correcaoalinhamentoinputsformcadastro">
+                <label for="Nome">Nome</label>
+                <input type="text" placeholder="João" class="form-control" name="Nome" id="Nome">
+            </div>
+                <div class="form-group col-sm-6 correcaoalinhamentoinputsformcadastro">
+                    <label for="Sobrenome">Sobrenome</label>
+                    <input type="text" placeholder="dos Santos Oliveira" class="form-control" name="Sobrenome" id="Sobrenome">
+                </div>
+
+                <div class="form-group col-sm-6 correcaoalinhamentoinputsformcadastro">
+                    <label for="Email">E-mail</label>
+                    <input type="email" placeholder="email@email.com" class="form-control" name="Email" id="Email">
+                </div>
+
+                <div class="form-group col-sm-6 correcaoalinhamentoinputsformcadastro">
+                    <label for="Telefone">Telefone</label>
+                    <input type="text" placeholder="(31)9999-9999" class="form-control" name="Telefone" id="Telefone">
+                </div>
+
+                <div class="form-group col-sm-6 correcaoalinhamentoinputsformcadastro">
+                    <label for="Idade">Idade</label>
+                    <input type="number" placeholder="18" class="form-control" name="Idade" id="Idade" style="text-align:center">
+                </div>
+                <div class="form-group col-sm-6 correcaoalinhamentoinputsformcadastro">
+                    <label for="Sexo">Sexo</label>
+                    <select id="Sexo" name="Sexo" class="form-control">
+                        <option value="1">Masculino</option>
+                        <option value="2">Feminino</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-sm-6 correcaoalinhamentoinputsformcadastro">
+                    <label for="Logradouro">Logradouro</label>
+                    <input type="text" placeholder="Rua..." class="form-control" name="Logradouro" id="Logradouro">
+                </div>
+
+                <div class="form-group col-sm-6 correcaoalinhamentoinputsformcadastro">
+                    <label for="Bairro">Bairro</label>
+                    <input type="text" placeholder="Santo Antônio" class="form-control" name="Bairro" id="Bairro">
+                </div>
+
+                <div class="form-group col-sm-6 correcaoalinhamentoinputsformcadastro">
+                    <label for="Cidade">Cidade</label>
+                    <input type="text" placeholder="Belo Horizonte" class="form-control" name="Cidade" id="Cidade">
+                </div>
+
+                <div class="form-group col-sm-6 correcaoalinhamentoinputsformcadastro">
+                    <label for="Estado">Estado</label>
+                    <input type="text" placeholder="MG" class="form-control" name="Estado" id="Estado" maxlength="2">
+                </div>
+
+                <div class="form-group">
+                    <label for="PossuiExperiencia" style="padding-right:5px">Você possui experiência?</label>
+                    @Html.CheckBoxFor(model => model.PossuiExperiencia, new { id = "PossuiExperiencia" })
+                </div>
+
+                <div class="form-group">
+
+                    <label for="TipoExperiencia">Caso sim, em qual atuação?</label><br>
+
+                    <label for="ExperienciaGarcom" style="padding-right:5px">Garçom</label>
+                    @Html.CheckBoxFor(model => model.ExperienciaCopeiro, new { id = "ExperienciaGarcom" })
+                    <br />
+                    <label for="ExperienciaBarman" style="padding-right:5px">Barman</label>
+                    @Html.CheckBoxFor(model => model.ExperienciaGarcom, new { id = "ExperienciaBarman" })
+                    <br />
+                    <label for="ExperienciaSeguranca" style="padding-right:5px">Segurança</label>
+                    @Html.CheckBoxFor(model => model.ExperienciaSeguranca, new { id = "ExperienciaSeguranca" })
+                    <br />
+                    <label for="ExperienciaDj" style="padding-right:5px">DJ</label>
+                    @Html.CheckBoxFor(model => model.ExperienciaDj, new { id = "ExperienciaDj" })
+                    <br />
+                    <label for="ExperienciaCopeiro" style="padding-right:5px">Copeiro</label>
+                    @Html.CheckBoxFor(model => model.ExperienciaCopeiro, new { id = "ExperienciaCopeiro" })
+                    <br />
+                    <label for="ExperienciaFritadeira" style="padding-right:5px">Fritadeira</label>
+                    @Html.CheckBoxFor(model => model.ExperienciaFritadeira, new { id = "ExperienciaFritadeira" })
+                    <br />
+                    <label for="ExperienciaHostness" style="padding-right:5px">Hostness (Recepção de eventos)</label>
+                    @Html.CheckBoxFor(model => model.ExperienciaHostness, new { id = "ExperienciaHostness" })
+                    <br />
+                    <label for="ExperienciaMusico" style="padding-right:5px">Músico</label>
+                    @Html.CheckBoxFor(model => model.ExperienciaMusico, new { id = "ExperienciaMusico" })
+                    <br />
+                    <label for="ExperienciaCaixa" style="padding-right:5px">Caixa</label>
+                    @Html.CheckBoxFor(model => model.ExperienciaCaixa, new { id = "ExperienciaCaixa" })
+                    <br />
+                    <label for="ExperienciaPromotorEventos" style="padding-right:5px">Eventos</label>
+                    @Html.CheckBoxFor(model => model.ExperienciaPromotorEventos, new { id = "ExperienciaPromotorEventos" })
+                    <br />
+                    <label for="ExperienciaAnimadorFestas" style="padding-right:5px">Animador de Festas</label>
+                    @Html.CheckBoxFor(model => model.ExperienciaAnimadorFestas, new { id = "ExperienciaAnimadorFestas" })
+                    <br />
+                    <label for="ExperienciaManobrista" style="padding-right:5px">Manobrista</label>
+                    @Html.CheckBoxFor(model => model.ExperienciaManobrista, new { id = "ExperienciaManobrista" })
+                    <br />
+                    <label for="ExperienciaSevicosGerais" style="padding-right:5px">Serviços Gerais</label>
+                    @Html.CheckBoxFor(model => model.ExperienciaSevicosGerais, new { id = "ExperienciaSevicosGerais" })
+                    <br />
+                    <label for="ExperienciaFotografo" style="padding-right:5px">Fotografo</label>
+                    @Html.CheckBoxFor(model => model.ExperienciaFotografo, new { id = "ExperienciaFotografo" })
+                    <br />
+
+                    @*<label for="TipoExperiencia">Caso sim, em qual atuação?</label><br>
+                        <input type="checkbox" name="vehicle" value="garcom"> Garçom<br>
+                        <input type="checkbox" name="vehicle" value="barman"> Barman<br>
+                        <input type="checkbox" name="vehicle" value="seguranca"> Segurança<br>
+                        <input type="checkbox" name="vehicle" value="dj"> DJ<br>
+                        <input type="checkbox" name="vehicle" value="copeiro"> Copeiro<br>
+                        <input type="checkbox" name="vehicle" value="fritadeira"> Fritadeira <br>
+                        <input type="checkbox" name="vehicle" value="hostess"> Hostess (Recepção de eventos)<br>
+                        <input type="checkbox" name="vehicle" value="musico"> Músico <br>
+                        <input type="checkbox" name="vehicle" value="caixa"> Caixa <br>
+                        <input type="checkbox" name="vehicle" value="promotor_eventos"> Promotor de evento <br>
+                        <input type="checkbox" name="vehicle" value="animador_festas"> Animador de festas infantis <br>
+                        <input type="checkbox" name="vehicle" value="manobrista"> Manobrista <br>
+                        <input type="checkbox" name="vehicle" value="servicos_gerais"> Serviços Gerais <br>
+                        <input type="checkbox" name="vehicle" value="fotografo"> Fotógrafo <br>*@
+                </div>
+
+                <div class="form-group">
+                    <label for="LocalExperiencia">Pode nos contar um pouco sobre sua experiência?</label>
+                    <textarea class="form-control" name="LocalExperiencia" id="LocalExperiencia" placeholder="Já trabalhei como freelancer nos eventos..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <input class="btn btn-laranja btn-lg" type="submit" value="Cadastre-se">
+                </div>
+        }
+        @*<div>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="BWRC6L2WE9LQC">
+                    <input type="image" src="https://www.paypalobjects.com/pt_BR/BR/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - A maneira fácil e segura de enviar pagamentos online!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/pt_BR/i/scr/pixel.gif" width="1" height="1">
+                </form>
+            </div>*@
     </div>
-
-
 
 
 </section><!-- main content -->
 
+@Scripts.Render("~/Content/js/vendor/jquery-1.11.2.min.js")
+@Scripts.Render("~/Content/materialize/js/materialize.min.js")
 
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-96040922-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+@*@Styles.Render("~/Content/materialize/css/materialize.min2.css")*@

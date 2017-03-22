@@ -1,4 +1,5 @@
-﻿
+﻿@using System.Runtime.InteropServices
+
 @{
     Layout = null;
 }
@@ -8,45 +9,61 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mundo Design</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <title>@ViewBag.Title Sobre Nós - Vou de Freela</title>
+    <link href="/Content/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/css/main.css" rel="stylesheet" />
 </head>
 <body>
     <main class="container left-container">
         <div class="row">
             <div id="menu-target">
                 <ul>
-                    <li><i class="fa fa-home"></i><a href="@Url.Action("Index", "Home")">Home</a></li>
-                    <li><i class="fa fa-anchor"></i><a href="@Url.Action("About", "Postagem")">Contact</a></li>
-                    <li><i class="fa fa-paper-plane"></i><a href="#">Contact</a></li>
+                    <li><i class="fa fa-home"></i><a href="@Url.Action("About", "Postagem")">Home</a></li>
+                    <li><i class="fa fa-anchor"></i><a href="@Url.Action("Create", "Profissionals")">Faça Parte</a></li>
+                    <li><i class="fa fa-paper-plane"></i><a href="@Url.Action("Contato", "Profissionals")">Fale Conosco</a></li>
                 </ul>
                 <hr>
 
             </div>
-            <section class="sidebar col-md-4 col-sm-12" style="background-image:url(/Content/img/OF8O1N0.jpg)">
+            <section class="sidebar col-md-4 col-sm-12" style="background-image:url(/Content/img/home_default.jpg)">
                 <span class="menu-trigger animated fadeInDown">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </span>
 
-                <div class="site-info">
+                <!--<div class="site-info">
                     <div class="primary-info">
-                        <h1>Writer</h1>
-                        <p>A minimal blogging theme to put your content on show. <a href="post.html">Look at the features.</a> </p>
-                        <p>Content is king</p>
+                        <h1>Vou de Freela</h1>
+                        <p>Aqui uma mensagem bonitinha</p>
+                        <p>Aqui outra mensagem bonitinha</p>
                     </div>
                     <div class="secondary-info">
                         <p>
-                            <a class="btn btn-primary" href="#"><i class="fa fa-user-plus"></i>Join Our Newsletter</a>
+                            <a class="btn btn-primary" href="@Url.Action("Create", "Profissionals")"><i class="fa fa-user-plus"></i>Faça parte!</a>
                         </p>
                     </div>
-                </div>
+                </div>-->
             </section><!-- end sidebar -->
 
         </div>
-
+        <section class="col-md-8 col-sm-6 col-md-offset-6 main-content">
+            <div class="sub-nav">
+                <h2>Sobre nós</h2>
+                <p>A Vou de Freela é uma empresa que surgiu com uma missão: aproximar quem precisa trabalhar como freelancer e quem precisa de freelas.</p>
+                <p>Observando os amigos, conhecidos e o mercado da região metropolitana de Belo Horizonte percebemos o quão difícil pode ser para uma pessoa que não tem contatos mas precisa de “grana”, encontrar uma forma entrar no mercado de freelancers para eventos. </p>
+                <p>Resolvemos então, indagar empreendedores do setor percebemos que também há a dificuldade da parte deles em saber quem está disponível e deseja esse tipo de trabalho; por isso eles sempre se restringem aos mesmos profissionais e/ ou indicações.</p>
+                <p>Enfim, não foi difícil ter a ideia de juntar as duas pontas e por isso estamos aqui com o propósito de dar visibilidade à quem precisa do emprego e levar à quem precisa contratar mais opções com qualidade. Ou seja, juntar a fome com a vontade de comer!</p>
+                <p>Então se você faz parte dessa turma que anseia por trabalho, ou se você dá oportunidades para essa galera disposta a ganhar uma grana com suor do seu trabalho; se cadastre aí ou entre em contato com a gente!</p>
+            </div>
+            
+            <div class="secondary-info">
+                <p>
+                    <a class="btn btn-primary" href="@Url.Action("Create", "Profissionals")"><i class="fa fa-user-plus"></i> Faça parte!</a>
+                </p>
+            </div>
+        </section>
     </main>
 
 
@@ -59,7 +76,18 @@
     <script src="~/Content/js/vendor/bootstrap.min.js"></script>
     <script src="~/Content/js/vendor/fastclick.min.js"></script>
     <script src="~/Content/js/main.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
+        ga('create', 'UA-96040922-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
 
 </body>
 </html>

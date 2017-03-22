@@ -1,9 +1,14 @@
-﻿<!DOCTYPE html>
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title Vou de Freela</title>
+    <title>@ViewBag.Title - Fale Conosco</title>
     <link href="/Content/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/Content/css/font-awesome.min.css" rel="stylesheet" />
     <link href="/Content/css/main.css" rel="stylesheet" />
@@ -35,22 +40,54 @@
                     </div>
                     <div class="secondary-info">
                         <p>
-                            <a class="btn btn-primary" href="#"><i class="fa fa-user-plus"></i>Faça parte!</a>
+                            <a class="btn btn-primary" href="@Url.Action("Create", "Profissionals")"><i class="fa fa-user-plus"></i>Faça parte!</a>
                         </p>
                     </div>
                 </div>-->
             </section><!-- end sidebar -->
 
-            @RenderBody()
         </div>
+        <section class="col-md-8 col-sm-6 col-md-offset-6 main-content">
+            <div class="sub-nav">
 
+                <h3>Fale Conosco</h3>
+                @using (Html.BeginForm("Create", "Contatoes"))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="form-group">
+                        <label for="Nome">Nome</label>
+                        <input type="text" placeholder="Guilherme Junqueira" class="form-control" name="Nome" id="Nome">
+                    </div>
+                    @*<div class="form-group">
+                            <label for="company">Empresa</label>
+                            <input type="text" placeholder="Exemplo Ltda" class="form-control" name="company">
+                        </div>*@
+                    <div class="form-group">
+                        <label for="Email">E-mail</label>
+                        <input type="text" placeholder="examplo@email.com" class="form-control" name="Email" id="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="Telefone">Telefone</label>
+                        <input type="tel" placeholder="+55 31 998217779" class="form-control" name="Telefone" id="Telefone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Mensagem">Mensagem</label>
+                        <textarea class="form-control" name="Mensagem" id="Mensagem" placeholder="Olá, meu nome..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="btn btn-laranja" type="submit" value="Enviar">
+                    </div>
+                }
+            </div>
+        </section>
     </main>
 
 
     @Scripts.Render("~/bundles/jquery")
-    @*@Scripts.Render("~/bundles/bootstrap")*@
-
-    @*<script src="../../../../../ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>*@
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
     <script src="~/Content/js/vendor/jquery.jpanelmenu.min.js"></script>
     <script src="~/Content/js/vendor/bootstrap.min.js"></script>
@@ -71,6 +108,5 @@
     </script>
 
 
-    @RenderSection("scripts", required: false)
 </body>
 </html>

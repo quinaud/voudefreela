@@ -1,4 +1,21 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Droid+Serif:400,400italic,700);
+@font-face {
+    font-family: 'poetsenoneregular';
+    src: url('/Content/tipografia/poetsenone-regular-webfont.woff2') format('woff2'),
+         url('/Content/tipografia/poetsenone-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'pacificoregular';
+    src: url('/Content/tipografia/pacifico-webfont.woff2') format('woff2'),
+         url('/Content/tipografia/pacifico-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 /* line 12, ../sass/_type.sass */
 body {
   line-height: 1.65;
@@ -11,7 +28,7 @@ input,
 select,
 textarea {
   color: #333337;
-  font-family: "Droid Serif", serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
 }
 
 /* line 24, ../sass/_type.sass */
@@ -56,11 +73,8 @@ a:hover, a:active {
   transition: all 400ms;
 }
 
-/* line 50, ../sass/_type.sass */
-h1,
-h2 {
-  font-weight: 700;
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+h1,h2,h3,h4,h5,h6 {
+   font-family: "poetsenoneregular", sans-serif;
 }
 
 /* line 55, ../sass/_type.sass */
@@ -906,14 +920,14 @@ ol li {
   display: block;
   height: 40px;
   width: 40px;
-  background: #333;
+  /* background: #333; */
   padding-top: 8px;
   cursor: pointer;
 }
 /* line 56, ../sass/partials/_menu.sass */
 .menu-trigger span {
-  height: 5px;
-  width: 28px;
+  height: 3px;
+  width: 25px;
   float: left;
   display: block;
   margin: 0 6px 5px;
@@ -1047,7 +1061,7 @@ ol li {
 /* line 10, ../sass/partials/_main-content.sass */
 .sub-nav {
   border-bottom: solid 1px #f5f5f5;
-  line-height: 30px;
+  /*line-height: 30px;*/
 }
 /* line 14, ../sass/partials/_main-content.sass */
 .sub-nav a {
@@ -1580,13 +1594,14 @@ form label {
   font-size: 20px;
   font-size: 2rem;
   margin: 15px 0 0;
+  font-weight: normal;
 }
 /* line 9, ../sass/partials/_contact.sass */
 form input.form-control,
 form textarea.form-control {
   border: solid 0px transparent;
   box-shadow: none;
-  border-bottom: solid 3px;
+  border-bottom: solid 1px;
   border-radius: 0;
   padding: 5px 0;
   background-color: #fff;
@@ -1970,4 +1985,21 @@ a:hover, a:active, a:focus {
   text-decoration: none;
   color: #333;
   border-bottom: solid 1px #999;
+}
+
+/* Classes extras criadas por Henrique Mirai */
+.correcaoalinhamentoinputsformcadastro {
+  margin-left: -15px;
+}
+
+.btn-laranja {
+    background-color: #f88508; 
+    border: none !important;
+    color: #fff !important;
+    transition:all 0.350s ease;
+}
+
+.btn-laranja.active, .btn-laranja.focus, .btn-laranja:active, .btn-laranja:focus, .btn-laranja:hover, .open > .dropdown-toggle.btn-laranja {
+    background-color: #c06915 !important;
+    color: #fff !important;
 }

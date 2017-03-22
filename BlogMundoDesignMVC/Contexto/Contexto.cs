@@ -12,10 +12,12 @@ namespace BlogMundoDesignMVC.Contexto
         }
 
         public DbSet<Profissional> Profissionais { get; set; }
+        public DbSet<Contato> Contatos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new ProfissionalConfig());
+            modelBuilder.Configurations.Add(new ContatoConfig());
         }
     }
 }

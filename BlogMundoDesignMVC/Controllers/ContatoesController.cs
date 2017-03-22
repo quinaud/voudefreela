@@ -11,109 +11,107 @@ using BlogMundoDesignMVC.Models;
 
 namespace BlogMundoDesignMVC.Controllers
 {
-    public class ProfissionalsController : Controller
+    public class ContatoesController : Controller
     {
         private Contexto.Contexto db = new Contexto.Contexto();
 
-        // GET: Profissionals
+        // GET: Contatoes
         public ActionResult Index()
         {
-            return View(db.Profissionais.ToList());
+            return View(db.Contatos.ToList());
         }
 
-        // GET: Profissionals/Details/5
+        // GET: Contatoes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Profissional profissional = db.Profissionais.Find(id);
-            if (profissional == null)
+            Contato contato = db.Contatos.Find(id);
+            if (contato == null)
             {
                 return HttpNotFound();
             }
-            return View(profissional);
+            return View(contato);
         }
 
-        // GET: Profissionals/Create
+        // GET: Contatoes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Profissionals/Create
+        // POST: Contatoes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Profissional profissional)
+        public ActionResult Create([Bind(Include = "Id,Nome,Email,Telefone,Mensagem")] Contato contato)
         {
             if (ModelState.IsValid)
             {
-                db.Profissionais.Add(profissional);
+                db.Contatos.Add(contato);
                 db.SaveChanges();
-                return RedirectToAction("Finalizar", "Profissionals");
+                return RedirectToAction("About", "Postagem");
             }
 
-            return View(profissional);
+            return View(contato);
         }
 
-        
-
-        // GET: Profissionals/Edit/5
+        // GET: Contatoes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Profissional profissional = db.Profissionais.Find(id);
-            if (profissional == null)
+            Contato contato = db.Contatos.Find(id);
+            if (contato == null)
             {
                 return HttpNotFound();
             }
-            return View(profissional);
+            return View(contato);
         }
 
-        // POST: Profissionals/Edit/5
+        // POST: Contatoes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,Sobrenome,Idade,Sexo,Logradouro,Bairro,Cidade,Estado,PossuiExperiencia,TipoExperiencia,LocalExperiencia,EfetuouPagamento")] Profissional profissional)
+        public ActionResult Edit([Bind(Include = "Id,Nome,Email,Telefone,Mensagem")] Contato contato)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(profissional).State = EntityState.Modified;
+                db.Entry(contato).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(profissional);
+            return View(contato);
         }
 
-        // GET: Profissionals/Delete/5
+        // GET: Contatoes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Profissional profissional = db.Profissionais.Find(id);
-            if (profissional == null)
+            Contato contato = db.Contatos.Find(id);
+            if (contato == null)
             {
                 return HttpNotFound();
             }
-            return View(profissional);
+            return View(contato);
         }
 
-        // POST: Profissionals/Delete/5
+        // POST: Contatoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Profissional profissional = db.Profissionais.Find(id);
-            db.Profissionais.Remove(profissional);
+            Contato contato = db.Contatos.Find(id);
+            db.Contatos.Remove(contato);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -125,16 +123,6 @@ namespace BlogMundoDesignMVC.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        public ActionResult Contato()
-        {
-            return View();
-        }
-
-        public ActionResult Finalizar()
-        {
-            return View();
         }
     }
 }
