@@ -36,6 +36,29 @@ namespace BlogMundoDesignMVC.Controllers
             return View(profissional);
         }
 
+        // GET: Profissionals/CreateFree
+        public ActionResult CreateFree()
+        {
+            return View();
+        }
+
+        // POST: Profissionals/CreateFree
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreateFree(Profissional profissional)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Profissionais.Add(profissional);
+                db.SaveChanges();
+                return RedirectToAction("FinalizarFree", "Profissionals");
+            }
+
+            return View(profissional);
+        }
+		
         // GET: Profissionals/Create
         public ActionResult Create()
         {
